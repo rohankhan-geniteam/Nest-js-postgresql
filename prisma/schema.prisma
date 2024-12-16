@@ -16,3 +16,9 @@ model Task {
   updatedAt   DateTime @updatedAt
 }
 
+model User {
+  id       String   @id @default(cuid())
+  username String   @unique
+  password String
+  roles    String[] @default(["user"]) // Example: roles like 'user', 'admin'
+}
